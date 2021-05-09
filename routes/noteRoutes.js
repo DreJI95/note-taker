@@ -4,11 +4,11 @@ const { createNewNote, validateNote, showNotes } = require('../lib/notes');
 const notesDb = require('../Develop/db/db.json');
 
 router.get('/api/notes', (req, res) => {
-    let results = notesDb[0];
+    let results = notesDb;
 
     if (req.query) {
         results = showNotes(results);
-        res.json(results)
+        res.json(results);
       }
       else {
         res.send(404);
@@ -17,7 +17,6 @@ router.get('/api/notes', (req, res) => {
 
 router.post('/api/notes', (req, res) => {
 
-    console.log(req.body);
     //req.body.id = notesDb.length.toString(); //place unique id here
     
     if (!validateNote(req.body)) {
