@@ -6,14 +6,10 @@ const notesDb = require('../Develop/db/db.json');
 router.get('/api/notes', (req, res) => {
     let results = notesDb;
 
-    if (req.query) {
-        results = showNotes();
-        res.json(results);
-        return (results);
-      }
-      else {
-        res.send(404);
-      }
+    results = showNotes();
+    res.json(results);
+    return (results);
+
   });
 
 router.post('/api/notes', (req, res) => {
