@@ -1,12 +1,18 @@
-{
-  "notesArray": [
-    {
-      "title": "Test Title",
-      "text": "Test text"
-    },
-    {
-      "title": "Test save1",
-      "text": "Test save2"
-    }
-  ]
-}
+[
+  {
+    "title": "Test Title",
+    "text": "Test text"
+  },
+  {
+    "title": "Test save1",
+    "text": "Test save2"
+  },
+  {
+    "title": "hi",
+    "text": "save3"
+  },
+  {
+    "title": "go",
+    "text": "yest3"
+  }
+]

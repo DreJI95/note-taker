@@ -7,8 +7,9 @@ router.get('/api/notes', (req, res) => {
     let results = notesDb;
 
     if (req.query) {
-        results = showNotes(results);
+        results = showNotes();
         res.json(results);
+        return (results);
       }
       else {
         res.send(404);
@@ -16,7 +17,6 @@ router.get('/api/notes', (req, res) => {
   });
 
 router.post('/api/notes', (req, res) => {
-
     //req.body.id = notesDb.length.toString(); //place unique id here
     
     if (!validateNote(req.body)) {
