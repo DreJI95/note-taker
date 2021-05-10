@@ -3,6 +3,16 @@ const path = require('path');
 const { createNewNote, validateNote, showNotes } = require('../lib/notes');
 const notesDb = require('../Develop/db/db.json');
 
+router.delete('/api/notes/:id', (req, res) => {
+
+  console.log(req.query);
+  // if (req.body)
+  // {
+  //   console.log(removeNote(res));
+  // }
+
+});
+
 router.get('/api/notes', (req, res) => {
     let results = notesDb;
 
