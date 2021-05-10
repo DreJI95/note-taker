@@ -1,36 +1,28 @@
 const router = require('express').Router();
 const path = require('path');
-const { createNewNote, validateNote, showNotes } = require('../lib/notes');
-const notesDb = require('../Develop/db/db.json');
-
-router.delete('/api/notes/:id', (req, res) => {
-
-  console.log(req.query);
-  // if (req.body)
-  // {
-  //   console.log(removeNote(res));
-  // }
-
-});
+const { createNewNote, validateNote, showNotes, removeNote } = require('../lib/notes');
 
 router.get('/api/notes', (req, res) => {
-    let results = notesDb;
 
-    results = showNotes();
+    let results = showNotes();
     res.json(results);
     return (results);
-
   });
 
 router.post('/api/notes', (req, res) => {
-    //req.body.id = notesDb.length.toString(); //place unique id here
     
     if (!validateNote(req.body)) {
     res.status(400).send('The note is not properly formatted.');
     } else {
-    const note = createNewNote(req.body, notesDb);
+    const note = createNewNote(req.body);
     res.json(note);
     }
+});
+
+router.delete('/api/notes/:id', (req, res) => {
+
+  let selectedId = req.params.id;
+  removeNote(selectedId);
 });
 
 router.get('/notes', (req, res) => {
