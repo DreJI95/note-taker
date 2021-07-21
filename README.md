@@ -20,6 +20,7 @@
 
   # Usage 
      The note save, show active note and delete options are currently available on the client side of the app as well as through third party api-request software. (Note: currently delete only shows on page refresh)
+  Url: https://note-taker-dreji95.herokuapp.com/
 
   # License
      MIT: https://choosealicense.com/licenses/mit/
